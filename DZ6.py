@@ -12,7 +12,7 @@ class Student:
             self.model = model
             self.ram = ram
 
-    comp = Info("HP","I7",16)
+    #comp = Info("HP","I7",16)
 user1 = Student("Roman")
 user2 = Student("Владимир")
 user1.show()
