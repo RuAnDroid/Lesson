@@ -21,8 +21,3 @@ print()
 # d1.display()
 # print(d1.id)
 # print()
-
-
-
-print(user1.name)
-print(user2.name)
