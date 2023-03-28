@@ -24,5 +24,9 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('blog/', include('blog.urls')),
     path('portfolio/', views.portfolio, name='port'),
+    path('signup/', views.signupuser, name='signupuser'),
+    path('login/', views.loginuser, name='loginuser'),
+    path('logout/', views.logoutuser, name='logoutuser'),
+    path('current/', views.currenttodos, name='currenttodos'),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

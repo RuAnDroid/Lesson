@@ -9,3 +9,7 @@ class SkillsConfig(AppConfig):
 class PortfolioConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
     name = 'port'
+
+class TodoConfig(AppConfig):
+    default_auto_field = 'django.db.models.BigAutoField'
+    name = 'todo'
