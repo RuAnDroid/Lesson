@@ -1,0 +1,18 @@
+{
+    "name": "\u0418\u0433\u043e\u0440\u044c\u044c\u044c\u044c",
+    "hobby": [
+        "drink",
+        "drags"
+    ],
+    "age": 20,
+    "children": [
+        {
+            "firsname": "Alice",
+            "age": 5
+        },
+        {
+            "firsname": "Boobs",
+            "age": 8
+        }
+    ]
+}

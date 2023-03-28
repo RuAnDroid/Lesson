@@ -1,0 +1,111 @@
+body{
+    background: lightyellow;
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.menu{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    background: orange;
+    padding: 20px;
+    margin-top: 0;
+}
+
+.content{
+    margin:0 auto;
+    max-width: 1200px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.flash{
+    padding: 10px;
+}
+
+.flash.success{
+    border:  1px solid #21bd56;
+    background:  #aeffc5;
+}
+.flash.error{
+    border:  1px solid #ff4343;
+    background:  #ff9c9c;
+}
+
+.menu a{
+    font-weight: bold;
+    color: brown;
+}
+.menu b{
+    font-weight: bold;
+    color: brown;
+}
+ul{
+    list-style: none;
+    padding: 0;
+}
+p>a{
+    text-decoration: none;
+    color: brown;
+}
+li>p, li div{
+    border: 1px solid #CCC;
+    padding: 10px 20px;
+}
+p.title{
+    margin: 0;
+    font-weight: bold;
+    background: gold;
+
+}
+p.title a{
+    display: block;
+}
+
+p.title:hover{
+    background: orange;
+}
+.announce{
+    margin-top: -1px;
+    margin-bottom: 40px;
+    background: #FFF;
+}
+
+.product-card {
+  width: 300px;
+  height: 400px;
+  outline-style: auto;
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.product-card h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.product-card p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.product-card button {
+  background-color: #007bff;
+  color: #fff;
+  border: 1px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.cards {
+  display: flex;
+  justify-content: space-between;
+}

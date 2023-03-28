@@ -1,0 +1,20 @@
+{% extends 'skills/base.html' %}
+{% load static %}
+{% block content %}
+<h1>Мои проекты</h1>
+<div class="my_port">
+    {% for port in porto %}
+    <div class="element">
+        <div>
+            <img src="{{ port.image.url }}" alt="">
+        </div>
+    <div class="text">
+        <h2><a href="{{ port.url }}" target="_blank">{{port.title}}</a> </h2>
+        <p>{{ port.description }}</p>
+    </div>
+    </div>
+
+    {% endfor %}
+</div>
+
+{% endblock %}

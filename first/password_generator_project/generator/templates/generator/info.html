@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<ul class="menu">
+        <li><a href="{% url 'home' %}">главная</a></li>
+        <li><a href="{% url 'info' %}">Информация</a></li>
+    </ul>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+<p>Author: Zotov Vladimir</p>
+    <h1>Правила:</h1>
+<h2>1. Выбераем нужное количество символов</h2>
+<h2>2. Вибираем необходимую сложность написания</h2>
+<h2>3. Нажимаем сгенерировать</h2>
+<h2>4. Не забываем скопировать пароль выделяем мышкой нажимаем CTRL+C либо правой кнопкой мыши и копировать</h2>
+</body>
+</html>

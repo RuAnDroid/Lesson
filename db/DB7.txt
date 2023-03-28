@@ -1,0 +1,101 @@
+Таблица Salespeople:
+snum - номер продавца (первичный ключ)
+sname - имя продавца
+com - комиссионные продавца
+city - город проживания продавца
+
+Таблица Orders:
+onum - номер заказа (первичный ключ)
+snum - номер продавца
+cnum - номер заказчика
+amt - сумма заказа
+odate - дата заказа
+
+Таблица Customers:
+cnum - номер заказчика (первичный ключ)
+cname – имя заказчика (клиента)
+city - город проживания заказчика
+snum - номер продавца
+rating - рейтинг
+
+1.	Напишите запрос, который выведет тех заказчиков в городах, которых не проживают продавцы.
+	SELECT c.cnum, c.cname
+	FROM customers as c , Salespeople as s
+	WHERE c.snum = s.snum and c.city !=s.city
+
+2.	Напишите запрос, который выбрал бы высший рейтинг в каждом городе.
+	SELECT CITY, max(rating)
+	FROM Customers 
+	GROUP BY CITY
+
+3.	Подсчитать, на какую сумму было продано товаров в каждый город.
+	SELECT c.city, SUM(o.amt)
+	FROM customers as c , Orders as o
+	WHERE c.cnum = o.cnum
+	GROUP BY c.city;
+
+4.	Определить сколько продавцов проживает в каждом городе.
+	SELECT city, count(city)
+	FROM salespeople
+	group by city
+
+
+5.	Выведите максимальный рейтинг заказчика для каждого продавца.
+	SELECT s.snum,sname,MAX(c.rating)
+	FROM Customers as c, Salespeople as s
+	WHERE s.snum=c.snum
+	GROUP BY s.snum
+	HAVING MAX(c.rating)
+
+6.	Напишите запрос, который получит максимальную сумму заказов каждого клиента, которая больше 3000
+	SELECT snum, MAX(amt)
+	FROM Orders
+	GROUP BY snum
+	having max(amt) >3000
+
+7.	Напишите запрос, который из таблицы заказов найдет минимальную сумму для каждой даты заказа, отсортировав по убыванию даты.
+	SELECT o.odate,MIN(o.amt)
+	FROM  Orders as o
+	GROUP BY o.odate
+	HAVING MIN(o.amt)
+	ORDER BY o.odate DESC
+
+8.	Выведите максимальную сумму заказа для каждого покупателя. Вывести и фамилии покупателей.
+	SELECT c.cname,max(o.amt)
+	FROM  Customers as c, Orders as o
+	where c.cnum=o.cnum
+	group by c.cname
+	Having max(o.amt)
+
+
+9.	Напишите запрос к таблице Заказчиков, который мог бы найти высший рейтинг в каждом городе. Вывод должен быть в такой форме: For the city (city), the highest rating is: (rating).
+	SELECT city as 'For the city', MAX(rating) as 'the highest rating is'
+	FROM Customers
+	GROUP BY city
+
+
+10.	Определите общую сумму заказа для каждого дня.
+	SELECT odate, SUM(amt)
+	FROM Orders
+	GROUP BY odate
+
+
+11.	Напишите запрос, который выведет сумму продаж, которая больше 10000.
+	SELECT odate, SUM(amt)
+	FROM Orders
+	GROUP BY odate
+	HAVING SUM(amt)>10000
+
+
+12.	Выведите фамилию и общую сумму заказа для каждого продавца.
+	SELECT s.sname,sum(o.amt)
+	FROM  Orders as o, Salespeople as s
+	where s.snum=o.snum
+	group by s.sname
+	Having sum(o.amt)
+
+13.	Выведите сумму товара и фамилию заказчика, сгруппировав товар по фамилиям.
+	SELECT c.cname,amt
+	FROM customers as c , Orders as o
+	where c.cnum=o.cnum
+	group by c.cname
