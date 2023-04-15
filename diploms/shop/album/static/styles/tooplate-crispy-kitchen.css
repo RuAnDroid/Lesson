@@ -1,15 +1,4 @@
-/*
 
-Tooplate 2129 Crispy Kitchen
-
-https://www.tooplate.com/view/2129-crispy-kitchen
-
-*/
-
-
-/*---------------------------------------
-  CUSTOM PROPERTIES ( VARIABLES )             
------------------------------------------*/
 :root {
   --white-color:                  #FFFFFF;
   --primary-color:                #f44749;
@@ -162,7 +151,8 @@ strong {
   NAVIGATION              
 -----------------------------------------*/
 .navbar {
-  background: var(--white-color);
+  background-color: blueviolet;
+  background-image: url('images\menubar.jpg');
   padding-top: 20px;
   padding-bottom: 20px;
 }
@@ -212,9 +202,7 @@ strong {
   box-shadow: none;
 }
 
-.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
-  background: transparent;
-}
+
 
 .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before,
 .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {

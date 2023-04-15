@@ -1,4 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .models import Card
 
-def index(request):
-    return render(request, index.html)
+
+def projects(request):
+    pr = Card.objects.all()
+    context = {'projects': pr}
+    return render(request, 'album/projects.html', context)

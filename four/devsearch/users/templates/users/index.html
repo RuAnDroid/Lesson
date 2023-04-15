@@ -1,5 +1,7 @@
 {% extends 'projects/base.html' %}
 {% block content %}
+
+  <!-- Main Section -->
   <main class="home">
     <section class="hero-section text-center">
       <div class="container container--narrow">
@@ -37,15 +39,12 @@
                   </div>
                 </div>
                 <p class="dev__info">
-                  {{ profile.bio|slice:"150" }}
+                 {{ profile.bio|slice:"150" }}
                 </p>
                 <div class="dev__skills">
                   {% for skill in profile.skill_set.all|slice:"3" %}
                   <span class="tag tag--pill tag--main">
-                    <small>JavaScript</small>
-                  </span>
-
-                     <small>{{ skill }}</small>
+                    <small>{{ skill }}</small>
                   </span>
                   {% endfor %}
                 </div>
@@ -56,5 +55,7 @@
         </div>
       </div>
     </section>
+
   </main>
+
 {% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'album/base.html' %}
+{% block content %}
+{% load static %}
+<main>
+    <section class="menu section-padding">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-12">
+                    <h2 class="mb-lg-5 mb-4">Наш ассортимент</h2>
+                </div>
+
+                <div class="product-container">
+                    {% for project in projects %}
+                    <div class="product-card">
+                    <a href="" class="item">
+                        <img src="{{ project.featured_image.url }}" alt="Product Image">
+                        <h2>{{project.title}}</h2>
+                        <p>{{project.description}}}</p>
+                        <p class="price">${{project.price}}</p>
+                    </a>
+                </div>
+                    {% endfor %}
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+</main>
+{% endblock %}

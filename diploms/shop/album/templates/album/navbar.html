@@ -1,0 +1,36 @@
+{% load static %}
+{% block content %}
+<nav class="navbar navbar-expand-lg bg-white shadow-lg">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <a class="logo" href="{% url 'projects' %}">
+            <img src="{% static 'images/logo.svg' %}" alt="Permit Yourself"/>
+            </a>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'projects' %}">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="new.html">Новинки</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Контакты</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="develop.html">Разработчик</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Signup\Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+{%endblock%}
