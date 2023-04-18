@@ -152,7 +152,8 @@ strong {
 -----------------------------------------*/
 .navbar {
   background-color: blueviolet;
-  background-image: url('images\menubar.jpg');
+  background-image:url("menubar.jpg");
+  background-size: cover;
   padding-top: 20px;
   padding-bottom: 20px;
 }
