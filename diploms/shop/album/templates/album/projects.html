@@ -5,25 +5,29 @@
     <section class="menu section-padding">
         <div class="container">
             <div class="row">
-
+                <div class="search">
+                <form class="search-form">
+                    <input type="text" class="search-field" placeholder="Search...">
+                    <button type="submit" class="search-button">ПОИСК</button>
+                </form>
+                    </div>
                 <div class="col-12">
                     <h2 class="mb-lg-5 mb-4">Наш ассортимент</h2>
-                </div>
-
-                <div class="product-container">
-                    {% for project in projects %}
-                    <div class="product-card">
-                    <a href="" class="item">
-                        <img src="{{ project.featured_image.url }}" alt="Product Image">
-                        <h2>{{project.title}}</h2>
-                        <p>{{project.description}}}</p>
-                        <p class="price">${{project.price}}</p>
-                    </a>
-                </div>
-                    {% endfor %}
-                </div>
-
+                    </div>
+                    <div class="product-container">
+                        {% for project in projects %}
+                        <div class="product-card">
+                            <a href="{% url 'single-card' project.id %}" class="item">
+                                <img src="{{ project.featured_image.url }}" alt="Product Image">
+                                <p>id:{{project.id}}</p>
+                                <h5>{{project.title}}</h5>
+                                <h6>${{project.price}}</h6>
+                            </a>
+                    </div>
+                {% endfor %}
             </div>
+
+        </div>
         </div>
 
     </section>
