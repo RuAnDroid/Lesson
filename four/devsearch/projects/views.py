@@ -32,6 +32,7 @@ def create_project(request):
     context = {'form': form}
     return render(request, 'projects/form-template.html', context)
 
+
 @login_required(login_url="login")
 def update_project(request, pk):
     profile = request.user.profile

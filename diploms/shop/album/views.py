@@ -1,10 +1,11 @@
 from django.shortcuts import render, redirect
 from .models import Card
+from .utils import search_projects
 
 
 def projects(request):
-    pr = Card.objects.all()
-    context = {'projects': pr}
+    pr, search_query = search_projects(request)
+    context = {'projects': pr, 'search_query': search_query}
     return render(request, 'album/projects.html', context)
 
 
