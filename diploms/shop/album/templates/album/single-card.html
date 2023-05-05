@@ -2,7 +2,34 @@
 {% block content %}
 {% load static %}
 
-<h1>Тут будет Описание товара</h1>
-
+<main>
+<header>
+      <h1>Product Name</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Description</a></li>
+          <li><a href="#">Reviews</a></li>
+          <li><a href="#">Specifications</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section>
+      <img src="product-image.jpg" alt="Product Image">
+      <h2>Description</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed imperdiet sollicitudin augue, nec aliquam metus commodo at. Donec eget ornare libero. Proin ligula velit, <em>congue</em> sed eros vel, dignissim malesuada ligula.</p>
+    </section>
+    <section>
+      <h2>Reviews</h2>
+      <ul>
+        <li><strong>5/5</strong> - "This product is amazing!" - <em>John D.</em></li>
+        <li><strong>4/5</strong> - "I really like this product, but it could be even better if..." - <em>Jane S.</em></li>
+      </ul>
+      <form>
+        <label for="review">Leave a Review:</label>
+        <textarea name="review" id="review" rows="5" cols="30"></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+</main>
 
 {% endblock %}

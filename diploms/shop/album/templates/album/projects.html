@@ -6,7 +6,7 @@
         <div class="container">
             <div class="row">
                 <div class="search">
-                <form class="search-form">
+                <form class="search-form" action="{% url 'projects' %}" method="get">
                     <input type="text" class="search-field" name="search_query" value="{{search_query}}" placeholder="Search...">
                     <button type="submit" class="search-button" value="Search">ПОИСК</button>
                 </form>

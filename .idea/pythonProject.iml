@@ -7,7 +7,7 @@
       <sourceFolder url="file://$MODULE_DIR$/therd/todos" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/porto/portfolio" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/diploms/shop" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/four" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/four/devsearch" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/venv" />
     </content>
     <orderEntry type="inheritedJdk" />
