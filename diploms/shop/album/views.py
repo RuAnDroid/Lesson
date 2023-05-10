@@ -17,7 +17,7 @@ def projects(request):
 
 def login_user(request):
     if request.user.is_authenticated:
-        return redirect('profiles')
+        return redirect('projects')
 
     if request.method == "POST":
         username = request.POST['username'].lower()
@@ -32,11 +32,11 @@ def login_user(request):
 
         if user is not None:
             login(request, user)
-            return redirect('profiles')
+            return redirect('projects')
         else:
             messages.error(request, "Username or password is incorrect")
 
-    return render(request, 'album/login.html')
+    return render(request, 'album/login_register.html')
 
 
 def logout_user(request):
@@ -58,13 +58,12 @@ def register_user(request):
 
             messages.success(request, 'User account was created!')
             login(request, user)
-            return redirect('profiles')
+            return redirect('projects')
         else:
             messages.error(request, 'An error has occurred during registration')
 
     context = {'page': page, 'form': form}
-    return render(request, 'album/login.html', context)
-
+    return render(request, 'album/login_register.html', context)
 
 def contact(request):
     return render(request, 'album/contact.html')

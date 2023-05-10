@@ -120,7 +120,7 @@ def login():
     elif request.method == "POST" and request.form['username'] == "admin" and request.form['psw'] == "123456":
         session['userLogged'] = request.form['username']
         return redirect(url_for('profile', username=session['userLogged']))
-    return render_template('login.html', title="Авторизация", menu=menu)
+    return render_template('login_register.html', title="Авторизация", menu=menu)
 
 
 @app.errorhandler(404)
