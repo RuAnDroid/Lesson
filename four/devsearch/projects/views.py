@@ -9,8 +9,13 @@ from django.contrib import messages
 def projects(request):
     pr, search_query = search_projects(request)
     custom_range, pr = paginate_projects(request, pr, 3)
-    context = {'projects': pr, 'search_query': search_query, 'custom_range': custom_range}
-    # 'paginator': paginator,
+
+    context = {
+        'projects': pr,
+        'search_query': search_query,
+        # 'paginator': paginator,
+        'custom_range': custom_range
+    }
     return render(request, "projects/projects.html", context)
 
 
@@ -24,10 +29,12 @@ def project(request, pk):
         review.project = project_obj
         review.owner = request.user.profile
         review.save()
+
         project_obj.get_vote_count()
 
-        messages.success(request, 'Your review was successfully submitted')
+        messages.success(request, 'Your review was successfully submitted!')
         return redirect('project', pk=project_obj.id)
+
     return render(request, 'projects/single-project.html', {'project': project_obj, 'form': form})
 
 
@@ -53,16 +60,17 @@ def update_project(request, pk):
     profile = request.user.profile
     project = profile.project_set.get(id=pk)
     form = ProjectForm(instance=project)
+
     if request.method == 'POST':
         # new_tags = request.POST.get('tags').replace(',', " ").split()
         form = ProjectForm(request.POST, request.FILES, instance=project)
         if form.is_valid():
             project = form.save()
             # for tag in new_tags:
-            #     tag, create = Tag.objects.get_or_create(name=tag)
-            #     project.tags.add(tag)
-
-            return redirect('account')
+            #     tag, created = Tag.objects.get_or_create(name=tag)
+            #     print(tag)
+            #     project.tags.add(tag.name)
+        return redirect('account')
 
     context = {'form': form}
     return render(request, 'projects/form-template.html', context)

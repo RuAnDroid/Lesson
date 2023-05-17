@@ -10,8 +10,9 @@ def search_projects(request):
 
         # tags = Tag.objects.filter(name__icontains=search_query)
 
-    pr = Card.objects.distinct().filter(Q(title__contains=search_query.lower()) |
-                                        Q(seller__contains=search_query.lower()))
+    pr = Card.objects.distinct().filter(Q(title__iregex=search_query) |
+                                        Q(id__iregex=search_query) |
+                                        Q(seller__iregex=search_query))
 
     # pr = Card.objects.distinct().filter(Q(title__iregex=r"(а-Я|0-9)$") |
     #                                     Q(seller__iregex=r"(а-Я|0-9)$"))

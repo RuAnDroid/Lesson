@@ -1,3 +1,11 @@
+.img_single{
+  width: 300px;
+  height: 400px;
+  margin: 10px;
+  border-style: none;
+}
+
+
 nav ul{
 margin: 0;
 padding: 0;

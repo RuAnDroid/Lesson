@@ -14,7 +14,7 @@
       </nav>
     </header>
     <section>
-      <img src="product-image.jpg" alt="Product Image">
+      <img class="img_single" src="{{ card.featured_image.url }}"  alt="Product Image">
       <h2>Description</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed imperdiet sollicitudin augue, nec aliquam metus commodo at. Donec eget ornare libero. Proin ligula velit, <em>congue</em> sed eros vel, dignissim malesuada ligula.</p>
     </section>
@@ -30,6 +30,7 @@
         <button type="submit">Submit</button>
       </form>
     </section>
+
 </main>
 
 {% endblock %}
