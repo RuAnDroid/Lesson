@@ -1,9 +1,8 @@
 from django.db import models
-from user.models import UserProfile
 
 
 class Card(models.Model):
-    seller = models.ForeignKey(UserProfile, on_delete=models.SET_NULL, null=True, blank=True)
+    seller = models.CharField(max_length=100, null=False, blank=False)
     title = models.CharField(max_length=100)
     description = models.CharField(max_length=250, blank=True)
     featured_image = models.ImageField(upload_to='projects/%Y/%m/%d/', default="default.jpg")
